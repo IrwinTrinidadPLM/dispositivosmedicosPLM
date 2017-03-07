@@ -1,0 +1,90 @@
+
+    	<!-- 2ND ROW OF PANELS -->
+		<div class="row">
+		   
+		   <h3><i class="fa fa-angle-right"></i> Buscadores</h3>
+		   <div class="col-lg-12 main-chart">
+						<!-- PROFILE 01 PANEL -->
+						<div class="col-lg-4 col-md-6 col-sm-6 mb">
+							<div class="content-panel pn">
+								<div id="profile-01">
+									
+					                  	 
+					                      <form class="form-horizontal" role="form"  style="padding-top: 50px;">
+					  
+					                          <div class="form-group">
+					                              <div class="col-sm-1 col-xs-1">
+					                              </div>
+					                              <div class="col-sm-10 col-xs-10">
+					                                  
+					                                  <input name="products" id="products" type="text" placeholder="Buscar Productos" ng-model="selectedProducts" typeahead="product as product.Name for product in products | filter:$viewValue | limitTo:8" typeahead-on-select="onSelectProduct($item, $model, $label)" class="form-control">
+					                              </div>
+					                          </div>
+					                          
+					                      </form>
+					          			
+								</div>
+								<div class="profile-01 centered">
+									<!--<p>ADD TO CONTACT LIST</p>-->
+									<img src="images/productos.png" width="100%;"  > 
+								</div>
+
+								<div class="centered">
+									
+								</div>
+							</div><!--/content-panel -->
+						</div><!--/col-md-4 -->
+						
+						<!-- PROFILE 01 PANEL -->
+						<div class="col-lg-4 col-md-6 col-sm-6 mb">
+							<div class="content-panel pn">
+								<div id="profile-01">
+									  <form class="form-horizontal" role="form"  style="padding-top: 50px;">
+					  
+					                          <div class="form-group">
+					                              <div class="col-sm-1 col-xs-1">
+					                              </div>
+					                              <div class="col-sm-10 col-xs-10">
+					                                  <input name="brands" id="brands" type="text" placeholder="Buscar Marcas" ng-model="selectedBrands" typeahead="brand as brand.Name for brand in brands | filter:$viewValue | limitTo:8" typeahead-on-select="onSelectBrand($item, $model, $label)" class="form-control">
+					                              </div>
+					                          </div>
+					                          
+					                      </form>
+								</div>
+								<div class="profile-01 centered">
+									<!--<p>ADD TO CONTACT LIST</p>-->
+									<img src="images/marcas.png" width="100%" > 
+								</div>
+								<div class="centered">
+									
+								</div>
+							</div><!--/content-panel -->
+						</div><!--/col-md-4 -->
+						
+						<!-- PROFILE 01 PANEL -->
+						<div class="col-lg-4 col-md-6 col-sm-6 mb">
+							<div class="content-panel pn">
+								<div id="profile-01">
+									  <form class="form-horizontal" role="form"  style="padding-top: 50px;">
+					  
+					                          <div class="form-group">
+					                              <div class="col-sm-1 col-xs-1">
+					                              </div>
+					                              <div class="col-sm-10 col-xs-10">
+					                                  <input type="text" class="form-control round-form" placeholder="Buscar" >
+					                              </div>
+					                          </div>
+					                          
+					                      </form>
+								</div>
+								<div class="profile-01 centered">
+									<!--<p>ADD TO CONTACT LIST</p>-->
+									<img src="images/empresas.png" width="100%" > 
+								</div>
+								<div class="centered">
+									
+								</div>
+							</div><!--/content-panel -->
+						</div><!--/col-md-4 -->
+			</div> <!-- end main-chart -->
+    </div><!--/END 2ND ROW OF PANELS -->
