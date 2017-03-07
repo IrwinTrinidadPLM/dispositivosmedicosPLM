@@ -39,34 +39,35 @@ $( function() {
     });
     
     function RedirectSearch( item ){
-    	var identifier = item.Key.indexOf(":");
-    	var level = item.Key.substring(0,identifier);
-    	var  path = item.Key.substring(identifier+1);
-    	path = stringText(item.label) + "-"+ path;
-    	
-    	alert(level);
-    	switch (level) {
-        case "1":
-        	console.log("1");
-            break;
-        case "2":
-        	console.log("2");
-            break;
-        case "3":
-        	console.log("3");
-        	window.location.href = $plm.contextPath + "/producto/"+ path;
-            break;
-        case "4":
-        	console.log("4");
-        	window.location.href = $plm.contextPath + "/producto/"+ path;
-            break;
-        case "5":
-        	console.log("5");
-            break;
-        case "6":
-        	console.log("6");
-        	break;
-    }
+    	var  path = "";
+    	if(item.category === "Categorias de Productos"){
+    		
+    		var identifier = item.Key.indexOf(":");
+    		var level = item.Key.substring(0,identifier);
+    		path = item.Key.substring(identifier+1);
+    		path = stringText(item.label) + "-"+ path;
+    		
+    		switch (level) {
+    		case "3":
+    			console.log("3");
+    			window.location.href = $plm.contextPath + "/producto/"+ path;
+    			break;
+    		case "4":
+    			console.log("4");
+    			window.location.href = $plm.contextPath + "/producto/"+ path;
+    			break;
+    		}
+    	}else if(item.category === "Marcas"){
+    		
+    		path = stringText(item.label) + "-"+ item.Key;
+    		window.location.href = $plm.contextPath + "/marca/"+ path;
+    		
+    	}else if(item.category === "Empresas"){
+    		
+    		path = stringText(item.label) + "-"+ item.Key;
+    		window.location.href = $plm.contextPath + "/empresa/"+ path;
+    		
+    	}
     	
     }
     
@@ -85,8 +86,8 @@ $( function() {
         string = string.replace(new RegExp(/[%]/g),"");
         string = string.replace(new RegExp(/[\/]/g),"-");
         string = string.replace(new RegExp(/[\\]/g),"-");
-        string = string.replace(new RegExp(/[(]/g),"-");
-        string = string.replace(new RegExp(/[)]/g),"-");
+        string = string.replace(new RegExp(/[(]/g),"");
+        string = string.replace(new RegExp(/[)]/g),"");
 		
 		return string;
     }

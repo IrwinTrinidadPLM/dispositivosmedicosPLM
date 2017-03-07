@@ -7,5 +7,8 @@
 	<definition name="index" extends="MasterPageSite">
 		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/index.jsp"></put-attribute>
 	</definition>
+	<definition name="product" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/product.jsp"></put-attribute>
+	</definition>
 	
 </tiles-definitions>

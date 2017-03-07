@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="MedicalDevices" class="com.plmlatina.dao.config.MedicalDevicesConfig">
+		<property name="urlHealthSuppliersGuideEngine" value="http://187.237.235.54/RestHealthSuppliersGuideEngine/RestHealthSuppliersGuideEngine.svc/" />
+	</bean>
+
+	<bean id="healthSuppliersGuideEngineDAO" class="com.plmlatina.dao.service.HealthSuppliersGuideDAO" autowire="constructor"/>
+	<bean id="managerHealthSuppliersGuide" class="com.plmlatina.dao.manager.ManagerHealthSuppliersGuide" autowire="constructor" />
+</beans>
