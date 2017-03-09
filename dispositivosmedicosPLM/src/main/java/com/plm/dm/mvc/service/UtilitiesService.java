@@ -15,6 +15,8 @@ import com.plm.dm.mvc.bean.BeanGeneralSettings;
 import com.plmlatina.dao.manager.ManagerHealthSuppliersGuide;
 import com.plmlatina.exception.PLMExceptions;
 import com.plmlatina.manager.manager;
+import com.plmlatina.model.GetClientDetailResult;
+import com.plmlatina.model.GetClientsByEditionByClientTypeByTextResult;
 import com.plmlatina.model.GetContentByProductResult;
 import com.plmlatina.model.GetContentsByProductResult;
 import com.plmlatina.model.GetProductsByEditionByLeafCategoryResult;
@@ -50,6 +52,30 @@ public class UtilitiesService {
 		return null;
 	}
 	
+	public List<GetClientsByEditionByClientTypeByTextResult> getClientsWithAddressByEditionByClientType(String codeString,int editionId,int clientTypeId,String text){
+		List<GetClientsByEditionByClientTypeByTextResult> listClientsEdition = null;
+		ManagerHealthSuppliersGuide manager = context.getBean(ManagerHealthSuppliersGuide.class);
+		try {
+			listClientsEdition =  manager.getClientsByEditionByClientTypeByTextResult(codeString,editionId,clientTypeId,text);
+		} catch (PLMExceptions e) {
+			e.printStackTrace();
+		}
+		return listClientsEdition;
+	}
+	
+	public GetClientDetailResult getClientDetail(String codeString, int editionId, int clientId){
+		GetClientDetailResult clientDetail = null;
+		ManagerHealthSuppliersGuide manager = context.getBean(ManagerHealthSuppliersGuide.class);
+		try {
+			clientDetail = manager.getClientDetail(codeString, editionId, clientId);
+		} catch (PLMExceptions e) {
+			e.printStackTrace();
+		}
+		return clientDetail;
+	}
+	
+	
+	
 	
 	//getCategoriesThreeByEditionByCategoriesThreeId
 	public List<GetLeafCategories> getCategoriesThreeByEditionByCategoriesThreeId(int categoryThreeId){
@@ -62,6 +88,10 @@ public class UtilitiesService {
 		manager manager =  context.getBean(manager.class); 
 		return manager.GetProductsByLeafCategoryIdByCategoryThreeId(gSettings.getEditionId(), categoryThreeId, leafCategoryId);
 	}
+	
+	
+	
+	
 	
 	
 }

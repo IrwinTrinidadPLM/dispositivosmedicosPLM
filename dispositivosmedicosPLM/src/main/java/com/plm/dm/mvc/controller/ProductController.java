@@ -1,5 +1,6 @@
 package com.plm.dm.mvc.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,7 +43,11 @@ public class ProductController {
 	public String productDetails(Model model, @PathVariable("productId") int productId, @PathVariable("clientId") int clientId) {
 		
 		GetContentByProductResult getContentsByProductResult = utilitiesService.getContentsByProductResult(clientId, productId, "");
-		model.addAttribute("getContentsByProductResult", getContentsByProductResult);
+		List<String> test = new ArrayList<String>();
+		test.add("prueba");
+		test.add("prueba");
+		test.add("prueba");
+		model.addAttribute("getContentsByProductResult", test);
 		model.addAttribute("title", getContentsByProductResult!=null?getContentsByProductResult.getProductName():"");
 		return "productDetail";	
 		

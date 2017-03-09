@@ -26,7 +26,6 @@ ul li {
 a, a:hover, a:focus {
     text-decoration: none;
     outline: none;
-    cursor: pointer;
 }
 ::selection {
 
@@ -935,12 +934,12 @@ height: 10  px;
 .box0 p {
 	text-align: center;
 	font-size: 12px;
-	color: #FFF;
+	color: #797979;
 }
 
-.box0:hover p {
+/*.box0:hover p {
 	color: #ff865c;
-}
+}*/
 
 .box0:hover {
 	background: #ffffff;
@@ -1531,7 +1530,7 @@ PANELS CONFIGURATIONS
   font-weight: 900;
   font-size: 11px;
   letter-spacing: 1px;
-  /*text-indent: 52px;Â¨*/
+  /*text-indent: 52px;¨*/
   cursor: pointer;
   transition: all 0.7s ease;
   margin: 0px;

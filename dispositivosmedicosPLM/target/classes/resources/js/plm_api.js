@@ -34,23 +34,20 @@
 	 
 	  services : {
 			  
-			  getAction: function (email,selectorHTML) {
-				  return  $.ajax({  
-				    	type : "POST",   
-						url:urlPath+"/EnginePrescription/saveSelected",
-						cache: (na)?true:false,
-						data : JSON.stringify( selector ),
-						contentType: 'application/json',
-				   	 	mimeType: 'application/json', 
-						success : function(response) {
-							return response;
-						},error : function(e) {  
-					    	console.log('Error: ' + e);
-					    }  
-					});
-
-					
-			  }
+		  setCoordinates: function( coordinates ){
+  			  return $.ajax({
+  				type:"GET",
+  				url:$plm.contextPath+"/localizacion/"+coordinates,
+  				data:JSON.stringify( coordinates ),
+  				contentType:'application/json',
+  				mimeType:'application/json',
+  				success:function( response ){
+  					windows.location.href( $plm.contextPath+"/localizacion/" ); 
+  				},error:function(e){
+  					console.log('Error: ' + e)
+  				}
+  			});
+  		  }
 			  
 	  
 	  }

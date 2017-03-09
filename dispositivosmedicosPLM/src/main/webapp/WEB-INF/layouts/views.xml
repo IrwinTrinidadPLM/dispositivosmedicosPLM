@@ -20,4 +20,15 @@
 		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/brand.jsp"></put-attribute>
 	</definition>
 	
+		<!-- distribuidores -->
+	<definition name="distribuidores" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/dealers.jsp"></put-attribute>
+	</definition>
+	<definition name="distribuidor-medico" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/detailDealer.jsp"></put-attribute>
+	</definition>
+	<definition name="localizacion" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/localization.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>

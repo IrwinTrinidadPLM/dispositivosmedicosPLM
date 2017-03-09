@@ -32,6 +32,7 @@
     <script src="${pageContext.request.contextPath}/resources/libraries/jquery.fancybox.js"></script>    
     <script src="${pageContext.request.contextPath}/resources/libraries/predictive.js"></script>    
     <script src="${pageContext.request.contextPath}/resources/libraries/accordion.js"></script>    
+    <script src="${pageContext.request.contextPath}/resources/js/APIMap.js" type="text/javascript"></script>
 
   <!--  js -->
 <%--     <script src="${pageContext.request.contextPath}/resources/js/main.js" type="text/javascript"></script> --%>
@@ -229,7 +230,7 @@
                       </a>
                   </li>
                    <li class="mt">
-                      <a class="" href="">
+                      <a class="" href="${pageContext.request.contextPath}/distribuidores">
                           <i class="fa"><img class="img-circle" src="${pageContext.request.contextPath}/resources/images/menu/distribuidores-cercanos.png" height="40px"></i>
                           <span>Distribuidores</span>
                       </a>
