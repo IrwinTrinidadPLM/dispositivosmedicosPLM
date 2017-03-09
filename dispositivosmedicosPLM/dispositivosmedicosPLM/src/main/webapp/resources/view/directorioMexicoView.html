@@ -1,0 +1,39 @@
+  
+
+
+   <!-- 2ND ROW OF PANELS -->
+    <div class="row">
+     <h3><i class="fa fa-angle-right"></i> Directorio Comercial México</h3>
+           <br/>
+          
+            <ul class="list-inline" id="menu-letters">
+                <li ng-repeat="lett in letters" class="" ><a class="pop-upper img-circle"  href="#/directorio-comercial-mexico/{{lett}}" ng-class="{'active': lett==letterSelect}"  style="text-transform: uppercase;" ><i class="mtop5">{{lett}}</i></a></li>
+
+            </ul>
+        
+
+         <br/>
+      
+ 
+            <!-- TODO PANEL -->
+            <div class="col-lg-2 col-md-1 col-sm-1">
+            </div>
+
+            <div class="col-lg-8 col-md-10 col-sm-10 mb" >
+             <div class="green-panel pn" style="height: auto;">
+                <div class="green-header" style="background: #092650;margin-bottom:0px;text-transform: uppercase;">
+                  <h5>{{letterSelect}}</h5>
+                </div>
+                <div class="steps">
+                  
+                  <a href="#/empresa/a-ingenieria-biomedica-varfra-1"><label for='op1'>A INGENIERÍA BIOMÉDICA VARFRA</label></a>
+                  <a href="#/empresa/active-2"><label for='op2'>ACTIVE</label></a>
+                  <a href="#/empresa/aerosol-medical-systems-3"><label for='op3'>AEROSOL MEDICAL SYSTEMS</label></a>
+                   <a href="#/empresa/aqymsa-4"><label for='op4'>AQYMSA</label></a>
+              </div>
+                
+              </div>
+            </div><!--/col-md-4 -->
+
+  
+    </div><!--/END 2ND ROW OF PANELS -->

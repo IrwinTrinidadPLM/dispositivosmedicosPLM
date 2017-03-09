@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<context:annotation-config />
+	<context:component-scan base-package="com.plmlatina.*" />
+
+     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
+		<property name="url" value="jdbc:sqlserver://195.192.2.249:1433;databaseName=Guia_nueva 20170125;"></property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="t0m$0nl@t1n@"></property>
+	</bean>
+	
+	
+<!--      CREAMOS FABRICA DE SESIONES, DEBIDO A QUE HABERNATE SE MANEJA POR MEDIO DE SESIONES -->
+     <bean id="sessionFactory"
+     	class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"><!-- CLASE PARA GENERAR SESIONES -->
+     <property name="dataSource" ref="dataSource"></property><!-- PROPIEDAD QUE HACE REFERENCIA A DATASOURCE QUE CONECTA A BASE DE DATOS -->
+     <property name="packagesToScan" ><!-- PAQUETE DONDE ESTARAN LOS POJOS PARA REALIZAR EL MAPPING RELACIONAL DEL OBJETO -->
+	  <list>
+	     <value>com.plmlatina.pojos</value>
+	  </list>
+	</property>
+     <property name="hibernateProperties">
+     	<props><!-- COLECCION DE PROPIEDADES -->
+     		<prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</prop><!-- INDICAMOS TIPO DE BASE DE DATOS A UTILIZAR -->
+     		<prop key="hibernate.show_sql">true</prop><!-- MUESTRA EN CONSOLA SENTENCIAS EJECUTADAS POR HIBERNATE -->
+     	</props>
+     </property>
+      <qualifier value="sessionFactory"></qualifier>
+     </bean>
+     
+<!--      TRADUCIENDO EXCEPCIONES HIBERNATE EN EXCEPCIONES SPRING -->
+     <bean id="exceptionTranslator"
+     	class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor">
+     </bean>
+     
+     <!-- MANEJADOR DE TRANSACCIONES (HABILITAMOS TRANSACCIONALIDAD EN HIBERNATE)-->
+     <bean id="transactionManager"
+     	class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+     <property name="sessionFactory" ref="sessionFactory"></property><!-- HACE REFERENCIA A FABRICA DE SESIONES -->
+     </bean>
+     
+     <tx:annotation-driven transaction-manager="transactionManager" /><!-- HABILITA ANOTACIONES TRANSACCIONALIDAD -->
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	
+	<definition name="index" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/index.jsp"></put-attribute>
+	</definition>
+	<definition name="product" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/product.jsp"></put-attribute>
+	</definition>
+	
+	<!-- distribuidores -->
+	<definition name="distribuidores" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/dealers.jsp"></put-attribute>
+	</definition>
+	<definition name="distribuidor-medico" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/detailDealer.jsp"></put-attribute>
+	</definition>
+	<definition name="localizacion" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/localization.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
