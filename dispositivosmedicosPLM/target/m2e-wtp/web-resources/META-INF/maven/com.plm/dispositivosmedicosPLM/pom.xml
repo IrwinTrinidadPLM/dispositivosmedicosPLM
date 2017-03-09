@@ -196,13 +196,13 @@
 		<dependency>
 		<groupId>com.plmlatina.code</groupId>
 		        <artifactId>MedicalDevicesBussinesEntities</artifactId>
-		        <version>1.0.3</version>
+		        <version>1.0.7</version>
 		</dependency>
 				
 				<dependency>
 		<groupId>com.plmlatina.code</groupId>
 		        <artifactId>MedicalDevicesDAO</artifactId>
-		        <version>1.0.1</version>
+		        <version>1.0.4</version>
 		</dependency>
 		
 	    		<!-- 		SQLSERVER -->
@@ -267,7 +267,7 @@
 		<dependency>
 		     <groupId>com.plmlatina.code</groupId>
 		     <artifactId>guia</artifactId>
-		     <version>1.0.0</version>
+		     <version>1.0.3</version>
 		</dependency>
 	</dependencies>
 	  

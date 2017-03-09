@@ -8,7 +8,9 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<context:annotation-config />
-	<context:component-scan base-package="com.plmlatina.*" />
+	<bean id="manager" class="com.plmlatina.manager.manager" />
+	<bean id="servic" class="com.plmlatina.service.GetLeafCategoriesService" />
+<!-- 	<context:component-scan base-package="com.plmlatina.*" /> -->
 
      <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
@@ -22,6 +24,12 @@
      <bean id="sessionFactory"
      	class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"><!-- CLASE PARA GENERAR SESIONES -->
      <property name="dataSource" ref="dataSource"></property><!-- PROPIEDAD QUE HACE REFERENCIA A DATASOURCE QUE CONECTA A BASE DE DATOS -->
+     <property name="annotatedClasses">
+			<list>
+				 <value>com.plmlatina.pojos.GetLeafCategories</value>
+				 <value>com.plmlatina.pojos.GetProducts</value>
+			</list>
+	</property>
      <property name="packagesToScan" ><!-- PAQUETE DONDE ESTARAN LOS POJOS PARA REALIZAR EL MAPPING RELACIONAL DEL OBJETO -->
 	  <list>
 	     <value>com.plmlatina.pojos</value>

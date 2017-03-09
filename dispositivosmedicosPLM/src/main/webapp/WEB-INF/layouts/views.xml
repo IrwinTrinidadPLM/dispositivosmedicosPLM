@@ -7,8 +7,17 @@
 	<definition name="index" extends="MasterPageSite">
 		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/index.jsp"></put-attribute>
 	</definition>
-	<definition name="product" extends="MasterPageSite">
-		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/product.jsp"></put-attribute>
+	<definition name="productCategory" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/productCategory.jsp"></put-attribute>
+	</definition>
+	<definition name="products" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/products.jsp"></put-attribute>
+	</definition>
+	<definition name="productDetail" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/productDetail.jsp"></put-attribute>
+	</definition>
+	<definition name="brand" extends="MasterPageSite">
+		<put-attribute name="bodySite" value="/WEB-INF/views/MasterSite/brand.jsp"></put-attribute>
 	</definition>
 	
 </tiles-definitions>

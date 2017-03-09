@@ -19,6 +19,8 @@
     <link href="${pageContext.request.contextPath}/resources/css/jquery.fancybox.css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/style-responsive.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/plm-admin.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/accordion.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
    <!-- libreries -->
@@ -29,11 +31,13 @@
     <script src="${pageContext.request.contextPath}/resources/libraries/modernizr.custom.63321.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/resources/libraries/jquery.fancybox.js"></script>    
     <script src="${pageContext.request.contextPath}/resources/libraries/predictive.js"></script>    
+    <script src="${pageContext.request.contextPath}/resources/libraries/accordion.js"></script>    
 
   <!--  js -->
 <%--     <script src="${pageContext.request.contextPath}/resources/js/main.js" type="text/javascript"></script> --%>
     <script src="${pageContext.request.contextPath}/resources/js/autocomplete.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/plm_api.js" type="text/javascript"></script>
+     <script src="${pageContext.request.contextPath}/resources/js/plm_api.js" type="text/javascript"></script>
+     <script src="${pageContext.request.contextPath}/resources/js/product.js" type="text/javascript"></script>
     
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
 
@@ -80,7 +84,7 @@
                 <div class="navbar-header">
                   <button type="button" id="active-menu" class="navbar-toggle" data-placement="right"  data-target=".navbar-collapse" style="font-size: 22px;color: #002d6d;">
                         <i class="fa fa-bars"><img src="${pageContext.request.contextPath}/resources/images/menu.png" width="30px" alt="logo1" /></i></button>
-                  <a class="navbar-brand animate" href="#"><img src="${pageContext.request.contextPath}/resources/images/logo-guia-de-proveedores.png" alt="logo1" /></a>
+                  <a class="navbar-brand animate" href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/logo-guia-de-proveedores.png" alt="logo1" /></a>
                 </div>
                 <div class="navbar-collapse collapse" style="padding: 25px 0">
                   
@@ -274,9 +278,9 @@
                         <div class="col-md-4 col-sm-6 col-xs-12 pull-right">
                            <div class="input-group input-group-sm" style="margin-top: -5px;">
                            
-                            <input type="text" class="form-control" placeholder="Buscar Producto,Cliente o Marca" id="searchPrincipal"/>
+                            <input type="text" class="form-control" placeholder="Buscar producto, marca, empresa" id="searchPrincipal"/>
                             <span class="input-group-btn">
-                              <button class="btn btn-info btn-flat" type="button" style="background-color:#ed800c;border-color:#e47d10;">Buscar <img class="img-circle" src="${pageContext.request.contextPath}/resources/images/menu/buscadores.png" height="20px"></button>
+                              <button class="btn btn-info btn-flat" type="button" style="background-color:#ed800c;border-color:#e47d10;">Buscar </button>
                             </span>
                          
                           </div>

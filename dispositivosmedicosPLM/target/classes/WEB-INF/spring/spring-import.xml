@@ -6,4 +6,14 @@
     <import resource="classpath:WEB-INF/lib/MedicalDeviceDAO-Config.xml"/>
     <import resource="classpath:WEB-INF/spring/context.xml"/>
 
+	<bean id="beanGeneralSettings" class="com.plm.dm.mvc.bean.BeanGeneralSettings" >
+		
+		<!-- Configuración de componentes -->
+		
+		<property name="codeString" value="4lcqj6oXJb9nC3za2RM8VJfEezUZ"></property>
+		<property name="editionId" value="5"></property>
+
+		
+	</bean>  
+    
 </beans>

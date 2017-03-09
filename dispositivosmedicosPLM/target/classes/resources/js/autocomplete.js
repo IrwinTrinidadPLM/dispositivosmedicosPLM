@@ -40,55 +40,34 @@ $( function() {
     
     function RedirectSearch( item ){
     	var  path = "";
-    	if(item.category === "Categorias de Productos"){
+    	if(item.category === "CATEGORIAS DE PRODUCTOS"){
     		
     		var identifier = item.Key.indexOf(":");
     		var level = item.Key.substring(0,identifier);
     		path = item.Key.substring(identifier+1);
-    		path = stringText(item.label) + "-"+ path;
+    		path =  $plm.cleanText(item.label) + "-"+ path;
     		
     		switch (level) {
     		case "3":
-    			console.log("3");
-    			window.location.href = $plm.contextPath + "/producto/"+ path;
+    			window.location.href = $plm.contextPath + $plm.routes.redirectCategoryProduct+ path;
     			break;
     		case "4":
-    			console.log("4");
-    			window.location.href = $plm.contextPath + "/producto/"+ path;
+    			window.location.href = $plm.contextPath + $plm.routes.redirectProducts+ path;
     			break;
     		}
-    	}else if(item.category === "Marcas"){
+    	}else if(item.category === "MARCAS"){
     		
-    		path = stringText(item.label) + "-"+ item.Key;
-    		window.location.href = $plm.contextPath + "/marca/"+ path;
+    		path =  $plm.cleanText(item.label) + "-"+ item.Key;
+    		window.location.href = $plm.contextPath + $plm.routes.redirectBrand + path;
     		
-    	}else if(item.category === "Empresas"){
+    	}else if(item.category === "EMPRESAS"){
     		
-    		path = stringText(item.label) + "-"+ item.Key;
-    		window.location.href = $plm.contextPath + "/empresa/"+ path;
+    		path =  $plm.cleanText(item.label) + "-"+ item.Key;
+    		window.location.href = $plm.contextPath + $plm.routes.redirectCompany+ path;
     		
     	}
     	
     }
     
-    function stringText(string){
-    	
-    	string = string.toLowerCase();
-    	string = string.trim();
-		string = string.replace(new RegExp(/[àáâãäå]/g),"a");
-        string = string.replace(new RegExp(/[èéêë]/g),"e");
-        string = string.replace(new RegExp(/[ìíîï]/g),"i");
-        string = string.replace(new RegExp(/[òóôõö]/g),"o");
-        string = string.replace(new RegExp(/[ùúûü]/g),"u");
-        string = string.replace(new RegExp(/ /g),"-");
-        string = string.replace(new RegExp(/[\,]/g),"");
-        string = string.replace(new RegExp(/[\.]/g),"");
-        string = string.replace(new RegExp(/[%]/g),"");
-        string = string.replace(new RegExp(/[\/]/g),"-");
-        string = string.replace(new RegExp(/[\\]/g),"-");
-        string = string.replace(new RegExp(/[(]/g),"");
-        string = string.replace(new RegExp(/[)]/g),"");
-		
-		return string;
-    }
+    
   });
